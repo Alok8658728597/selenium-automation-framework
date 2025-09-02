@@ -1,0 +1,18 @@
+# Eclipse and Java
+.classpath
+.project
+.settings/
+bin/
+target/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Maven
+dependency-reduced-pom.xml
+mvnw
+mvnw.cmd

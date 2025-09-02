@@ -3,7 +3,7 @@ package com.alok.selenium.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+public class LoginPage { 
     private final WebDriver driver;
     private final String url = "https://the-internet.herokuapp.com/login";
 

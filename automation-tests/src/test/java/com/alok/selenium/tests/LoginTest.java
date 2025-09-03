@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class LoginTest extends BaseTest { 
+public class LoginTest extends BaseTest {   
 
     @Test
     public void validLogin_shouldNavigateToSecureArea_andShowSuccess() {

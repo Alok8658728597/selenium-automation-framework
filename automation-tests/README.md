@@ -8,6 +8,6 @@ This is a TestNG-based Selenium framework using WebDriverManager for automatic d
 - Maven build
 - WebDriverManager support
 
-## How to Run
+## How to Run 
 ```bash
 mvn test

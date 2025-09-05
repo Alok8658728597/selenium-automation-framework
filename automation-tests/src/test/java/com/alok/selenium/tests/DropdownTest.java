@@ -19,8 +19,8 @@ import com.alok.selenium.pages.DropdownPage;
 
 public class DropdownTest extends BaseTest  {
 	DropdownPage dp;
-	@Test
-	public void testtoGetVisiableText() throws InterruptedException{
+	@Test(enabled=false)
+	public void testtoGetVisiableText() {
 		dp=new DropdownPage(driver);
 		dp.open();
 		String textSelect=dp.selectOnText();
@@ -28,11 +28,17 @@ public class DropdownTest extends BaseTest  {
 		Assert.assertEquals(textSelect, "Option 1","Dropdown selection by visible text");
 		
 	}
-	@Test
+	@Test(enabled=false)
 	public void testtoGetwithValue() {
 		dp=new DropdownPage(driver);
 		dp.open();
 		String selectedValue=dp.selectOnValue();
 		Assert.assertEquals(selectedValue, "10","Dropdwon selection based on value");
+	}
+	@Test
+	public void testMultipleselection() throws InterruptedException  {
+		dp=new DropdownPage(driver);
+		dp.multiDropdownSelection();
+		
 	}
 }

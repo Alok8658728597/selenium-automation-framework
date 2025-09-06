@@ -27,6 +27,7 @@ public class FileUploadDownloadTest extends DownloadLogic {
     public void fileDownload() throws InterruptedException {
     	fud = new FileUploadDownload(driver);
     	fud.downloadFile();
+    	//Download file
     	
     }
 }

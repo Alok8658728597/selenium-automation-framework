@@ -59,3 +59,8 @@ public class DropdownPage {
 	}
 
 }
+/*How do you select an option from a dropdown using visible text in Selenium?
+What is the difference between selectByVisibleText() and selectByValue()?
+How do you verify which option is currently selected in a dropdown?
+How can you check if a dropdown supports multiple selections?
+How do you handle multi-select dropdowns in Selenium?*/

@@ -27,5 +27,13 @@ public class DragAndDropPage {
 		Actions action = new Actions(driver);
 		action.dragAndDrop(driver.findElement(source), driver.findElement(destination)).perform();
 	}
+	public String drag_drop_andGetSuccessMessage() {
+		driver.get("https://testautomationcentral.com/demo/drag_and_drop.html");
+		WebElement source=driver.findElement(By.id("draggable"));
+		WebElement destination=driver.findElement(By.id("droppable"));
+		Actions action=new Actions(driver);
+		action.dragAndDrop(source, destination).perform();
+		return driver.findElement(By.xpath("//p[text()='Dropped successfully!']")).getText();
+	}
 
 }

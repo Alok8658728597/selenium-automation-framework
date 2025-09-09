@@ -18,6 +18,14 @@ public class DragAndDropTest extends BaseTest {
 		Assert.assertTrue(droppedItem.isDisplayed());
 
 	}
+	@Test
+	public void test_DragAndDrop_withSuccessful_Message() {
+		DragAndDropPage dgdpWithmsg = new DragAndDropPage(driver);
+		String actualSuccessMessage=dgdpWithmsg.drag_drop_andGetSuccessMessage();
+		String expectedSuccessMessage="Dropped successfully!";
+		Assert.assertEquals(actualSuccessMessage, expectedSuccessMessage,"Not Dropped successfully");
+		
+	}
 
 	// ✅ How do you perform drag and drop using the Actions class?
 	// ✅ What is the difference between dragAndDrop() and clickAndHold +

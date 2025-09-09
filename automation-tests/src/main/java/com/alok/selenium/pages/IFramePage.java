@@ -13,8 +13,6 @@ Interview Tip: Mention this is necessary after interacting with elements inside 
 public class IFramePage{
 	protected WebDriver driver;
 	private final String url="https://demo.automationtesting.in/Frames.html";
-	//private By frame=By.id("frm1");
-	//private By menu=By.id("selectnav2");
 	
 	public IFramePage(WebDriver driver) {
 		this.driver=driver;
@@ -25,7 +23,7 @@ public class IFramePage{
 	}
 	public void switchFrameAndPerformAction() throws InterruptedException {
 		
-		WebElement frameElement = driver.findElement(By.id("singleframe"));
+		WebElement frameElement =driver.findElement(By.id("singleframe"));
 		driver.switchTo().frame(frameElement);
 		WebElement texFilled = driver.findElement(By.xpath("//div[contains(@class, 'col-xs-6')]//input[@type='text']"));
 		texFilled.sendKeys("Alok");

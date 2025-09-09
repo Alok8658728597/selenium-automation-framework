@@ -1,5 +1,12 @@
 package com.alok.selenium.pages;
-
+/*What is the use of getWindowHandle() and getWindowHandles()?
+How do you switch between parent and child windows in Selenium?
+Why do we store the parent window handle before opening a new window?
+How do you identify and switch to a specific window among multiple ones?
+What is the purpose of driver.switchTo().window(windowHandle)?
+What happens if you don’t switch back to the parent window after working in a child window?
+How do you handle multiple windows opened by clicking the same button repeatedly?
+What is the difference between By.id, By.linkText, and other locator strategies?*/
 import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

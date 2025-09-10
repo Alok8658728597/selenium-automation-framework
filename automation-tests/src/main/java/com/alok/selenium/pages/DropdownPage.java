@@ -29,6 +29,7 @@ public class DropdownPage {
 		Select select = new Select(driver.findElement(withvisibleText));
 		select.selectByVisibleText("Option 1");
 		WebElement selectedOption = select.getFirstSelectedOption();
+		System.out.println(selectedOption.isSelected());
 		return selectedOption.getText();
 
 	}

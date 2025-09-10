@@ -6,7 +6,7 @@ import com.alok.selenium.base.BaseTest;
 import com.alok.selenium.pages.MultipleTab;
 
 public class TabTest extends BaseTest{
-	@Test
+	@Test(groups={"sanity"})
 	public void test_handleOfNewTab()  {
 		MultipleTab tb=new MultipleTab(driver);
 		tb.open();

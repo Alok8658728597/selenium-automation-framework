@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class LoginTest extends BaseTest {   
 
-    @Test
+    @Test(groups={"smoke"})
     public void validLogin_shouldNavigateToSecureArea_andShowSuccess() {
         LoginPage login = new LoginPage(driver).open();
         login.loginAs("tomsmith", "SuperSecretPassword!");
@@ -21,7 +21,7 @@ public class LoginTest extends BaseTest {
                 .contains("You logged into a secure area!");
     }
 
-    @Test
+    @Test(groups={"regression"})
     public void invalidLogin_shouldShowError() {
         LoginPage login = new LoginPage(driver).open();
         login.loginAs("wronguser", "wrongpass");

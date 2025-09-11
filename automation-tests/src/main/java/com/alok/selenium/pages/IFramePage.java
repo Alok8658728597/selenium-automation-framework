@@ -49,6 +49,7 @@ public class IFramePage {
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id("iframe1")));
 		// driver.switchTo().frame(nestedFrame);
 		driver.findElement(By.xpath("//button[@id='u_5_6']")).click();
+		//driver.switchTo().parentFrame();
 		driver.switchTo().defaultContent();
 	}
 

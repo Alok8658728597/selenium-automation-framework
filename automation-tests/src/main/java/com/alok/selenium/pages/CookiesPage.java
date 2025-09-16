@@ -1,3 +1,6 @@
+// Cookie is a Selenium class used to represent a single browser cookie.
+// You can create, fetch, and reuse cookies using this class for login automation and ses
+
 package com.alok.selenium.pages;
 
 import java.util.Set;

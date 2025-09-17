@@ -18,7 +18,7 @@ public class ScreenshotUtil {
      * @param driver   The WebDriver instance controlling the browser.
      * @param testName A custom name to identify the screenshot (usually the test method name).
      */
-    public static void captureScreenshot(WebDriver driver, String testName) {
+    public  static String captureScreenshot(WebDriver driver, String testName) {
         
         // Generate a timestamp to make the screenshot filename unique
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -45,5 +45,7 @@ public class ScreenshotUtil {
             // Handle any file-related exceptions and log the error
             System.err.println("Screenshot saving failed: " + e.getMessage());
         }
+        return filePath;//Retun becasue its needed in extent report 
     }
+    
 }

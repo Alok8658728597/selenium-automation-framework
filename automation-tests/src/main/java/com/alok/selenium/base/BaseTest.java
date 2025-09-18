@@ -26,6 +26,17 @@ public class BaseTest {
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 	}
 
+	/**
+	 * This method gives access to the browser (WebDriver) used in the test.
+	 * This method is especially useful for external classes like Listeners (e.g., MyListener) to
+	 * access the browser instance for actions like capturing screenshots on test
+	 * failure.
+	 */
+
+	public WebDriver getDriver() {
+		return driver;
+	}
+
 	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
 		if (driver != null) {

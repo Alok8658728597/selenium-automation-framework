@@ -1,4 +1,4 @@
-/*Types of Select Methods:
+/*Types of Select Methods: 
 
 i. selectByVisibleText Method
 ii. selectByIndex Method
@@ -19,7 +19,7 @@ import com.alok.selenium.pages.DropdownPage;
 
 public class DropdownTest extends BaseTest  {
 	DropdownPage dp;
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void testtoGetVisiableText() {
 		dp=new DropdownPage(driver);
 		dp.open();
@@ -34,7 +34,7 @@ public class DropdownTest extends BaseTest  {
 		String selectedValue=dp.selectOnValue();
 		Assert.assertEquals(selectedValue, "10","Dropdwon selection based on value");
 	}
-	@Test(enabled=false)
+	@Test(priority=1)
 	public void testMultipleselection() throws InterruptedException  {
 		dp=new DropdownPage(driver);
 		dp.multiDropdownSelection();

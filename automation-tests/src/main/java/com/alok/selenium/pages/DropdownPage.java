@@ -1,11 +1,13 @@
 package com.alok.selenium.pages;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -75,26 +77,45 @@ public class DropdownPage {
     /**
      * Handles multi-select dropdown and selects multiple options.
      * Uses JavaScript click for dynamic button and waits for dropdown visibility.
+     * @throws InterruptedException 
      */
-    public void multiDropdownSelection() {
+    public void multiDropdownSelection() throws InterruptedException {
         driver.get("https://www.testautomationcentral.com/demo/dropdown.html");
 
-        // Wait for the multi-select button to be clickable
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement multiPart = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Multi-Select']")));
 
-        // Interview Tip: Use JavaScriptExecutor when normal click fails due to overlays or dynamic elements
+        // Wait for the Multi-Select button and click it using Actions
+        WebElement multiPart = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Multi-Select']")));
+        Actions action = new Actions(driver);
+        action.moveToElement(multiPart).click().perform();
+
+        // Optional: Print button text for debugging
+        System.out.println("Button Text: " + multiPart.getText());
+
+        // Fallback: JavaScript click in case normal click fails
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", multiPart);
 
-        // Wait for the dropdown to be visible
-        WebElement dropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//select[contains(@class,'form-multiselect')]")));
+        // Wait for dropdown to appear
+        Thread.sleep(5000); // Increase wait time for dynamic rendering
 
-        Select select = new Select(dropdown);
+        // Check if dropdown is present
+        List<WebElement> dropdowns = driver.findElements(By.xpath("//select[contains(@class,'form-multiselect')]"));
+        System.out.println("Dropdowns found: " + dropdowns.size());
 
-        // Interview Tip: Always check if dropdown supports multiple selections using isMultiple()
-        if (select.isMultiple()) {
-            select.selectByVisibleText("Option 2");
-            select.selectByVisibleText("Option 4");
+        if (!dropdowns.isEmpty()) {
+            WebElement dropdown = dropdowns.get(0);
+            Select select = new Select(dropdown);
+
+            if (select.isMultiple()) {
+                select.selectByVisibleText("Option 2");
+                select.selectByVisibleText("Option 4");
+                System.out.println("Options selected successfully.");
+            } else {
+                System.out.println("Dropdown does not support multiple selection.");
+            }
+        } else {
+            System.out.println("Dropdown not found after clicking Multi-Select.");
         }
     }
+
 }

@@ -30,8 +30,8 @@ selenium-automation-framework/
 - Maven for build and dependency management
 - Git integration for version control
 - Covers:
-  -Alert Handling – Accept, dismiss, and validate JavaScript alerts
-  -File Upload/Download – Automate file selection dialogs and verify downloads
+✅Alert Handling – Accept, dismiss, and validate JavaScript alerts
+✅File Upload/Download – Automate file selection dialogs and verify downloads
 ✅ Drag and Drop – Test HTML5 and JavaScript-based drag-and-drop functionality
 ✅ Mouse Hover – Validate hover-triggered menus or tooltips
 ✅ Dropdowns – Handle static and dynamic dropdowns (single/multi-select)
